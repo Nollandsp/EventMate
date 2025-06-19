@@ -1,30 +1,45 @@
-// import { signup, login, logout, getUser } from "./auth.js";
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.querySelector(".burger");
+  const navLinks = document.querySelector(".nav-links");
 
-const burger = document.querySelector(".burger");
-const nav = document.querySelector(".nav-links");
+  console.log("DOM chargé");
+  console.log("burger:", burger);
+  console.log("navLinks:", navLinks);
 
-burger.addEventListener("click", () => {
-  nav.classList.toggle("active");
-  burger.setAttribute(
-    "aria-expanded",
-    burger.getAttribute("aria-expanded") === "false" ? "true" : "false"
-  );
-});
+  if (burger && navLinks) {
+    // Gestionnaire pour le burger
+    burger.addEventListener("click", (e) => {
+      e.stopPropagation(); 
+      navLinks.classList.toggle("active");
+      burger.setAttribute(
+        "aria-expanded",
+        burger.getAttribute("aria-expanded") === "false" ? "true" : "false"
+      );
+    });
 
-// Fermer le menu en cliquant ailleurs
-document.addEventListener("click", (e) => {
-  if (!nav.contains(e.target) && !burger.contains(e.target)) {
-    nav.classList.remove("active");
-    burger.setAttribute("aria-expanded", "false");
+    // Gestionnaire pour fermer en cliquant ailleurs
+    document.addEventListener("click", (e) => {
+      if (
+        navLinks.classList.contains("active") &&
+        !navLinks.contains(e.target) &&
+        !burger.contains(e.target)
+      ) {
+        navLinks.classList.remove("active");
+        burger.setAttribute("aria-expanded", "false");
+      }
+    });
   }
 });
 
 // Animation smooth
-document.querySelector(".a2").addEventListener("click", function (e) {
-  e.preventDefault();
-  const targetId = this.getAttribute("href").substring(1);
-  const targetElement = document.getElementById(targetId);
-  if (targetElement) {
-    targetElement.scrollIntoView({ behavior: "smooth" });
-  }
-});
+const smoothLink = document.querySelector(".a2");
+if (smoothLink) {
+  smoothLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href").substring(1);
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+}

@@ -638,27 +638,78 @@ header {
   }
 
   .event-form {
-    padding: 2rem 3rem;
     width: 90%;
-  }
-
-  .event-form h3 {
-    font-size: 1.8rem;
+    padding: 2rem;
   }
 
   .event-form input,
-  .event-form textarea {
-    font-size: 1.1rem;
+  .event-form textarea,
+  .event-form select {
+    font-size: 0.9rem;
+    width: 100%;
   }
 
-  .event-form button {
-    font-size: 1.1rem;
+  .event-form form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .event-form form > div {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .event-form form div:has(input[type="number"]),
+  .event-form form div:has(input#language) {
+    width: 100%;
+    display: block;
+  }
+
+  .payment {
+    flex-direction: row;
+    gap: 2rem;
     padding: 1rem;
   }
 
-  .payement {
-    flex-wrap: wrap;
-    gap: 1rem;
+  /* Footer */
+  .site-footer {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding: 2rem;
+    background: rgba(31, 41, 55, 0.95);
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .footer-section {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-section:last-child {
+    border-bottom: none;
+  }
+
+  .footer-links,
+  .footer-social,
+  .footer-contact {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-social .social-icons {
+    justify-content: center;
+    gap: 2rem;
   }
 }
 
