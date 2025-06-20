@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (burger && navLinks) {
     // Gestionnaire pour le burger
     burger.addEventListener("click", (e) => {
-      e.stopPropagation(); 
+      e.stopPropagation();
       navLinks.classList.toggle("active");
       burger.setAttribute(
         "aria-expanded",
@@ -43,3 +43,21 @@ if (smoothLink) {
     }
   });
 }
+
+const artists = document.querySelector(".artists");
+
+let scrollAmount = 0;
+const maxScroll = artists.scrollWidth - artists.clientWidth;
+
+function autoScroll() {
+  scrollAmount += 1; // Ajuste la vitesse ici
+  if (scrollAmount >= maxScroll) {
+    scrollAmount = 0;
+  }
+  artists.scrollLeft = scrollAmount;
+  requestAnimationFrame(autoScroll);
+}
+
+window.onload = () => {
+  autoScroll();
+};

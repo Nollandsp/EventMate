@@ -9,12 +9,14 @@
       rel="stylesheet"
     />
 
-    <title>Document</title>
+    <title>EventVibes</title>
   </head>
   <body>
     <header>
       <nav class="navbar">
-        <div class="logo">EventVibes</div>
+        <div class="logo">
+          <a href="./event.html">EventVibes</a>
+        </div>
 
         <button class="burger" aria-label="Toggle menu" aria-expanded="false">
           <span class="burger-line"></span>
@@ -49,24 +51,40 @@
           Inspirez-vous de ceux qui font vibrer les foules
         </h3>
 
-        <div class="singer">
-          <img src="./images/Travis-Scott.webp" alt="Travis Scott" />
-          <p>Travis Scott</p>
-        </div>
+        <div class="artists_track">
+          <div class="singer">
+            <img src="./images/Travis-Scott.webp" alt="Travis Scott" />
+            <p>Travis Scott</p>
+          </div>
+          <div class="singer">
+            <img src="./images/kendrick lamar.jfif" alt="Kendrick Lamar" />
+            <p>Kendrick Lamar</p>
+          </div>
+          <div class="singer">
+            <img src="./images/Sch.jfif" alt="SCH" />
+            <p>SCH</p>
+          </div>
+          <!-- autres chanteurs... -->
 
-        <div class="singer">
-          <img src="./images/kendrick lamar.jfif" alt="Kendrick Lamar" />
-          <p>Kendrick Lamar</p>
-        </div>
-
-        <div class="singer">
-          <img src="./images/Sch.jfif" alt="SCH" />
-          <p>SCH</p>
+          <!-- DUPLIQUÉ pour boucle fluide -->
+          <div class="singer">
+            <img src="./images/morad.jpg" alt="Morad" />
+            <p>Morad</p>
+          </div>
+          <div class="singer">
+            <img src="./images/Dj Snake.jpg" alt="Dj Snake" />
+            <p>Dj Snake</p>
+          </div>
+          <div class="singer">
+            <img src="./images/Asap-rocky.webp" alt="Asap Rocky" />
+            <p>Asap Rocky</p>
+          </div>
         </div>
       </section>
+
       <section class="event-form">
         <h3>Crée ton événement</h3>
-        <form>
+        <form id="event-form">
           <label for="title">Titre de l'événement</label>
           <input
             type="text"
@@ -285,7 +303,7 @@
 
           <button type="submit">Créer l'événement</button>
         </form>
-        <p></p>
+        <p id="form-error" style="color: red"></p>
       </section>
       <section class="commentaire-section">
         <h3 class="commentaire-title">Laissez un commentaire</h3>
@@ -406,6 +424,7 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
     <script type="module" src="./JS/events.js"></script>
 
